@@ -28,11 +28,13 @@
 
 
 </head>
-
+<%if (locals.error){%>
+    <%- body %>
+    <%}else{%>
 <%- include('partials/userheader') %>    
 <%- body %>
 <%- include('partials/userfooter') %>    
-
+<%}%>
 
 
 

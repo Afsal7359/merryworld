@@ -14,7 +14,7 @@ router.get('/logout',adminauth.adminauth,adminauth.adminauth,admincontroller.Adm
 //home banner
 router.get('/banner',adminauth.adminauth,adminpanelcontroller.gethomebanner);
 router.post('/addbanner',adminauth.adminauth,upload.single('bannerimage'),adminpanelcontroller.Addhomebanner);
-router.post('/addbanner',adminauth.adminauth,upload.single('bannerimage'),adminpanelcontroller.Addhomebanner);
+router.post('/editbanner/:id',adminauth.adminauth,upload.single('bannerimage'),adminpanelcontroller.edithomebanner);
 router.get('/deletebanner/:id',adminauth.adminauth,adminpanelcontroller.Deletehomebanner);
 
 
