@@ -1,0 +1,54 @@
+<section class="page-title">
+    <div class="img-wrap parallax-demo-1">
+        <div class="parallax-inner back-img" style="background-image: url(/assets/images/background/page-title.jpg);"></div>
+    </div>
+    <div class="auto-container">
+        <div class="content-box">
+            <ul class="bread-crumb clearfix">
+                <li><a href="/">Home</a></li>
+            </ul>
+            <div class="title">
+                <h1>Our features</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Page Title -->
+
+
+<!-- sidebar-page-container -->
+<% if (features) {%>
+<section class="sidebar-page-container" style="justify-content: center;">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-lg-8 col-md-12 col-sm-12 content-side">
+                <div class="blog-classic-content">
+                    <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                
+                           
+                                <div class="container" style=" align-items: center;justify-content: space-around;">
+                                 <div class="lower-content sec-title centred">
+                                    <figure class="image"><a href="/"><div class="container1"><img src="<%=features.featimage%>" alt=""></div></a></figure>
+                                    <h2><a><%=features.feathead%></a></h2>
+                                   </div>
+                                <div style="display: inline-flex;">
+                                <p><%=features.featdescription%></p>
+                               </div></div>
+                              
+                               
+                              
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<%}%>

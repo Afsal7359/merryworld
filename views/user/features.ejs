@@ -1,0 +1,55 @@
+
+
+
+
+
+        <!-- Page Title -->
+        <section class="page-title">
+            <div class="img-wrap parallax-demo-1">
+                <div class="parallax-inner back-img" style="background-image: url(assets/images/background/page-title.jpg);"></div>
+            </div>
+            <div class="auto-container">
+                <div class="content-box">
+                    <ul class="bread-crumb clearfix">
+                        <li><a href="/">Home</a></li>
+                    </ul>
+                    <div class="title">
+                        <h1>Our features</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Page Title -->
+
+
+        <!-- sidebar-page-container -->
+      
+        <!-- sidebar-page-container end -->
+<!-- gallery-page-section -->
+<section class="gallery-page-section">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <% if(features) { %>
+                <% for (var i = 0; i < features.length; i++) { %>
+            <div class="col-lg-4 col-md-6 col-sm-12 gallery-block">
+              
+                <div class="gallery-block-twos">
+                    <div class="inner-box">
+                      
+                        <figure class="image-box"><a href="features/<%=features[i]._id%>"><img src="<%= features[i].featimage %>" alt=""></a></figure>
+                      
+                        <!-- <div class="view-box"><a href="assets/images/gallery/gallery-1.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-plus-symbol"></i></a></div> -->
+                    </div>
+                </div>
+               
+            </div>
+            <%}%>
+            <% }%>
+      
+            
+        </div>
+    </div>
+</section>
+
+
+  
