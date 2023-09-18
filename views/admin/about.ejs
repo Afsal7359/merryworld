@@ -43,10 +43,14 @@
                 <p class="text-muted"></p>
                 <!-- Check if there are less than 3 aboutss before enabling the "Add" button -->
             
-                <a href="#" class="btn btn-primary" data-bs-target="#modaldemo1" data-bs-toggle="modal">
-                    Add
-                </a>
-         
+                <% if (abouts.length < 1) { %>
+                    <a href="#" class="btn btn-primary" data-bs-target="#modaldemo1" data-bs-toggle="modal">
+                        Add
+                    </a>
+                    <% } else { %>
+                    <!-- Display a message or modal to inform the user that they can't add more banners -->
+                    <p style="color: red;">You have reached the maximum item limit. If you want to add more items, you must delete something below.</p>
+                    <% } %>
   
             </div>
         </div>

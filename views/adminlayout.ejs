@@ -42,12 +42,12 @@
     <body class="ltr app sidebar-mini light-mode">
   
 
-      
-        <%- include('partials/adminheader') %> 
+        <%if(locals.adminlogin){%>
+            <%- body %>
+         <%}else{%>
+            <%- include('partials/adminheader') %> 
          <%- body %>
-        
-  
-
+         <%}%>
 
     </body>
 

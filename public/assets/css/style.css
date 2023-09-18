@@ -5054,16 +5054,17 @@ div#mCSB_1_container{
 .pricing-section .owl-carousel .owl-stage-outer .owl-item.active{
   opacity: 1;
 }
-.container1 {
-  width: 600px; /* Set the fixed width of the container */
-  height: 400px; /* Set the fixed height of the container */
-  border: 1px solid #ffffff; /* Add a border for visualization */
-  overflow: hidden; /* Hide any content that overflows the container */
+
+.card1 {
+  width: 600px; /* Set the width of your card */
+  height: 400px; /* Set the height of your card */
+  overflow: hidden; /* Hide any part of the image that exceeds the card's dimensions */
 }
 
-.container1 img {
-  max-width: 100%; /* Ensure the image does not exceed the container's width */
-  max-height: 100%; /* Ensure the image does not exceed the container's height */
-  display: block; /* Remove extra space under inline images */
-  margin: 0 auto; /* Center the image horizontally within the container */
+
+.fixed-size-image {
+  max-width: 100%; /* Limit the image width to fit the card width */
+  max-height: 100%; /* Limit the image height to fit the card height */
+  display: block; /* Remove any extra spacing around the image */
+  margin: auto; /* Center the image horizontally within the card */
 }

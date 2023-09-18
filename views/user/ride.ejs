@@ -19,55 +19,31 @@
             </div>
         </section>
         <!-- End Page Title -->
+        <% if (ride && ride.length > 0) { %>
 
+           
         <section class="gallery-page-section">
             <div class="auto-container">
                 <div class="row clearfix">
+                    <% for (let i = 0; i < ride.length; i++) { %>
+                        <% let currentride = ride[i]; %>
                     <div class="col-lg-4 col-md-6 col-sm-12 gallery-block">
                         <div class="gallery-block-two">
                             <div class="inner-box">
-                                <figure class="image-box"><img src="assets/images/gallery/gallery-2.jpg" alt=""><h3 style="text-align: center;">Surf Board</h3></figure>
-                                <div class="view-box"><a href="assets/images/gallery/gallery-2.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-plus-symbol"></i></a></div>
+                                <figure class="image-box"><img src="<%=currentride.rideimage%>" alt=""><h3 style="text-align: center;"><%=currentride.ridename%></h3></figure>
+                                <div class="view-box"><a href="<%=currentride.rideimage%>" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-plus-symbol"></i></a></div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 gallery-block">
-                        <div class="gallery-block-two">
-                            <div class="inner-box">
-                                <figure class="image-box"><img src="assets/images/gallery/gallery-1.jpg" alt=""><h3 style="text-align: center;">Surf Board</h3></figure>
-                                <div class="view-box"><a href="assets/images/gallery/gallery-1.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-plus-symbol"></i></a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 gallery-block">
-                        <div class="gallery-block-two">
-                            <div class="inner-box">
-                                <figure class="image-box"><img src="assets/images/gallery/gallery-3.jpg" alt=""><h3 style="text-align: center;">Surf Board</h3></figure>
-                                <div class="view-box"><a href="assets/images/gallery/gallery-3.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-plus-symbol"></i></a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 gallery-block">
-                        <div class="gallery-block-two">
-                            <div class="inner-box">
-                                <figure class="image-box"><img src="assets/images/gallery/gallery-4.jpg" alt=""><h3 style="text-align: center;">Surf Board</h3></figure>
-                                <div class="view-box"><a href="assets/images/gallery/gallery-4.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-plus-symbol"></i></a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 gallery-block">
-                        <div class="gallery-block-two">
-                            <div class="inner-box">
-                                <figure class="image-box"><img src="assets/images/gallery/gallery-5.jpg" alt=""><h3 style="text-align: center;">Surf Board</h3></figure>
-                                <div class="view-box"><a href="assets/images/gallery/gallery-5.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-plus-symbol"></i></a></div>
-                            </div>
-                        </div>
-                    </div>
-                    
+                    <%}%>
                 </div>
             </div>
+          
         </section>
-
+      
+        <% } else { %>
+            <h1>Admin Please add some Rides</h1>
+        <%}%>
 
 
   </div>

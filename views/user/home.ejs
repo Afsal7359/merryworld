@@ -1,52 +1,43 @@
 
 
 <div class="boxed_wrapper">
-
-
+    <% if (banners && banners.length > 0) { %>
         <!-- banner-section -->
         <section class="banner-section">
             <div class="banner-carousel owl-theme owl-carousel owl-dots-none">
-                <div class="slide-item">
-                    <div class="image-layer" style="background-image:url(assets/images/banner/banner-1.jpg)"></div>
-                    <div class="auto-container">
-                        <div class="content-box">
-                            <h2>Longest Glass Bridge in Kerala</h2>
-                           
-                        </div>  
+                <% for (let i = 0; i < banners.length; i++) { %>
+                    <% let currentBanner = banners[i]; %>
+                    <div class="slide-item">
+                        <div class="image-layer" style="background-image:url(<%=currentBanner.bannerimage%>)"></div>
+                        <div class="auto-container">
+                            <div class="content-box">
+                                <h2><%= currentBanner.bannerhead %></h2>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                <% } %>
+            </div>
+        </section>
+        <!-- banner-section end -->
+    <% } else { %>
+        <!-- Default banner if no data -->
+        <section class="banner-section">
+            <div class="banner-carousel owl-theme owl-carousel owl-dots-none">
                 <div class="slide-item">
-                    <div class="image-layer" style="background-image:url(assets/images/banner/banner-2.jpg)"></div>
+                    <!-- Set a default background image -->
+                    <div class="image-layer" style="background-image:url(default-image.jpg)"></div>
                     <div class="auto-container">
                         <div class="content-box">
-                            <h2>Merry world family park - Where fun begins</h2>
-                            
-                        </div>  
-                    </div>
-                </div>
-                <div class="slide-item">
-                    <div class="image-layer" style="background-image:url(assets/images/banner/banner-3.jpg)"></div>
-                    <div class="auto-container">
-                        <div class="content-box">
-                            <h2>Everyone deserves a fun-filled life</h2>
-                            
-                        </div>  
-                    </div>
-                </div>
-                <div class="slide-item">
-                    <div class="image-layer" style="background-image:url(assets/images/banner/banner-4.jpg)"></div>
-                    <div class="auto-container">
-                        <div class="content-box">
-                            <h2>Enter the magical world of thrills </h2>
-                            
-                        </div>  
+                            <!-- Set default heading text -->
+                            <h2>Default Heading</h2>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- banner-section end -->
-
-
+    <% } %>
+    
         <!-- info-section -->
         <section class="info-section">
             <div class="bg-layer"></div>
@@ -170,7 +161,7 @@ thrills for the grownups! </p>
         </section>
         <!-- chooseus-section end -->
 
-
+        <% if (ride && ride.length > 0) { %>
         <!-- gallery-section -->
         <section class="gallery-section">
             <div class="auto-container">
@@ -180,61 +171,27 @@ thrills for the grownups! </p>
             </div>
             <div class="outer-container">
                 <div class="gallery-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
+                    <% for (let i = 0; i < ride.length; i++) { %>
+                        <% let currentride = ride[i]; %>
                     <div class="gallery-block-one">
                         <div class="inner-box">
-                            <figure class="image-box"><img src="assets/images/gallery/gallery-1.jpg" alt=""></figure>
+                            <figure class="image-box"><img src="<%=currentride.rideimage%>" alt=""></figure>
                             
                             <div class="overlay-content">
-                                <h3><a>Towe ride</a></h3>
+                                <h3><a><%=currentride.ridename%></a></h3>
                                 
                             </div>
                         </div>
                     </div>
-                    <div class="gallery-block-one">
-                        <div class="inner-box">
-                            <figure class="image-box"><img src="assets/images/gallery/gallery-2.jpg" alt=""></figure>
-                            
-                            <div class="overlay-content">
-                                <h3><a>-----</a></h3>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-block-one">
-                        <div class="inner-box">
-                            <figure class="image-box"><img src="assets/images/gallery/gallery-3.jpg" alt=""></figure>
-                            
-                            <div class="overlay-content">
-                                <h3><a>-----</a></h3>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-block-one">
-                        <div class="inner-box">
-                            <figure class="image-box"><img src="assets/images/gallery/gallery-4.jpg" alt=""></figure>
-                            
-                            <div class="overlay-content">
-                                <h3><a>------</a></h3>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery-block-one">
-                        <div class="inner-box">
-                            <figure class="image-box"><img src="assets/images/gallery/gallery-5.jpg" alt=""></figure>
-                            
-                            <div class="overlay-content">
-                                <h3><a>------</a></h3>
-                                
-                            </div>
-                        </div>
-                    </div>
+                    <%}%>
+                   
                 </div>
             </div>
         </section>
         <!-- gallery-section end -->
-
+        <% } else { %>
+            <h1>Admin Please add some Rides</h1>
+        <%}%>
 
        <!-- scroll to top -->
        <button class="scroll-top scroll-to-target" data-target="html">
