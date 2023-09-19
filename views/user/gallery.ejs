@@ -21,55 +21,45 @@
     <!-- End Page Title -->
 
 
-    <!-- gallery-page-section -->
+    <% if (gallerys && gallerys.length > 0) { %>
+          <!-- gallery-page-section -->
     <section class="gallery-page-section">
         <div class="auto-container">
             <div class="row clearfix">
+                <% for (let i = 0; i < gallerys.length; i++) { %>
+                    <% let currentgallerys = gallerys[i]; %>
                 <div class="col-lg-4 col-md-6 col-sm-12 gallery-block">
                     <div class="gallery-block-two">
                         <div class="inner-box">
-                            <figure class="image-box"><img src="assets/images/gallery/gallery-1.jpg" alt=""></figure>
-                            <div class="view-box"><a href="assets/images/gallery/gallery-1.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-plus-symbol"></i></a></div>
+                            <figure class="image-box "><img src="<%=currentgallerys.gallerysimage%>" alt="" ></figure>
+                            <div class="view-box"><a href="<%=currentgallerys.gallerysimage%>" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-plus-symbol"></i></a></div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 gallery-block">
-                    <div class="gallery-block-two">
-                        <div class="inner-box">
-                            <figure class="image-box"><img src="assets/images/gallery/gallery-2.jpg" alt=""></figure>
-                            <div class="view-box"><a href="assets/images/gallery/gallery-2.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-plus-symbol"></i></a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 gallery-block">
-                    <div class="gallery-block-two">
-                        <div class="inner-box">
-                            <figure class="image-box"><img src="assets/images/gallery/gallery-3.jpg" alt=""></figure>
-                            <div class="view-box"><a href="assets/images/gallery/gallery-3.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-plus-symbol"></i></a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 gallery-block">
-                    <div class="gallery-block-two">
-                        <div class="inner-box">
-                            <figure class="image-box"><img src="assets/images/gallery/gallery-4.jpg" alt=""></figure>
-                            <div class="view-box"><a href="assets/images/gallery/gallery-4.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-plus-symbol"></i></a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 gallery-block">
-                    <div class="gallery-block-two">
-                        <div class="inner-box">
-                            <figure class="image-box"><img src="assets/images/gallery/gallery-5.jpg" alt=""></figure>
-                            <div class="view-box"><a href="assets/images/gallery/gallery-5.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-plus-symbol"></i></a></div>
-                        </div>
-                    </div>
-                </div>
+             <%}%>
                 
             </div>
         </div>
     </section>
     <!-- gallery-page-section end -->
+    <% } else { %>
+        <section class="gallery-page-section">
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="col-lg-4 col-md-6 col-sm-12 gallery-block">
+                        <div class="gallery-block-two">
+                            <div class="inner-box">
+                                <figure class="image-box"><img src="assets/images/gallery/gallery-1.jpg" alt=""></figure>
+                                <div class="view-box"><a href="assets/images/gallery/gallery-1.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-plus-symbol"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                 
+                    
+                </div>
+            </div>
+        </section>
+        <%}%>
 
       <!-- scroll to top -->
       <button class="scroll-top scroll-to-target" data-target="html">
